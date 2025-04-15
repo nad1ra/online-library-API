@@ -7,7 +7,7 @@ class Book(models.Model):
     title = models.CharField(max_length=100)
     authors = models.ManyToManyField(Author, related_name='books')
     genre = models.ForeignKey(Genre, on_delete=models.SET_NULL, null=True, related_name='books')
-    isbn = models.CharField(max_length=15, unique=True)
+    isbn = models.CharField(max_length=1, 5, unique=True)
     published_date = models.DateField()
     desc = models.TextField()
     page_count = models.IntegerField()
