@@ -3,5 +3,5 @@ from .models import Genre
 
 @admin.register(Genre)
 class GenreAdmin(admin.ModelAdmin):
-    list_display = ('name', 'desc')
+    list_display = ('id', 'name', 'desc')
     search_fields = ('name', 'desc')

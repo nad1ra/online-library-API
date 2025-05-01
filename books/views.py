@@ -1,11 +1,13 @@
 from rest_framework import generics
 from .models import Book, BookLending, BookCopy
 from .serializers import BookSerializer, BookLendingSerializer, BookCopySerializer
+from .paginations import BookPagination
 
 
 class BookListCreateView(generics.ListCreateAPIView):
     queryset = Book.objects.all()
     serializer_class = BookSerializer
+    pagination_class = BookPagination
 
 
 class BookRetrieveUpdateDestroyView(generics.RetrieveUpdateDestroyAPIView):
